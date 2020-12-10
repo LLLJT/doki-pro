@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ishang.doki.dao.NotifyMapper">
+  <resultMap id="BaseResultMap" type="com.ishang.doki.entity.Notify">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="notifytitle" jdbcType="VARCHAR" property="notifytitle" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="checkflag" jdbcType="INTEGER" property="checkflag" />
+    <result column="reason" jdbcType="VARCHAR" property="reason" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from notify
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ishang.doki.entity.Notify">
+    insert into notify (id, notifytitle, userid, 
+      checkflag, reason)
+    values (#{id,jdbcType=INTEGER}, #{notifytitle,jdbcType=VARCHAR}, #{userid,jdbcType=INTEGER}, 
+      #{checkflag,jdbcType=INTEGER}, #{reason,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.ishang.doki.entity.Notify">
+    update notify
+    set notifytitle = #{notifytitle,jdbcType=VARCHAR},
+      userid = #{userid,jdbcType=INTEGER},
+      checkflag = #{checkflag,jdbcType=INTEGER},
+      reason = #{reason,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, notifytitle, userid, checkflag, reason
+    from notify
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, notifytitle, userid, checkflag, reason
+    from notify
+  </select>
+  
+  <select id="selectbyuserid" resultMap="BaseResultMap">
+  select id,checkflag,notifytitle,reason
+from notify
+where userid=#{userid}
+  </select>
+  <select id="indexshow" resultMap="BaseResultMap">
+  select notify.id,notifytitle,userid,username
+from notify,`user`
+where checkflag=1
+and `user`.id=notify.userid
+order by id desc
+  </select>
+  
+  
+  
+  
+  
+</mapper>

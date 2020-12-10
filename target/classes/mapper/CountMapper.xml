@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ishang.doki.dao.CountMapper">
+  <resultMap id="BaseResultMap" type="com.ishang.doki.entity.Count">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="count" jdbcType="INTEGER" property="count" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from count
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ishang.doki.entity.Count">
+    insert into count (id, `count`)
+    values (#{id,jdbcType=INTEGER}, #{count,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.ishang.doki.entity.Count">
+    update count
+    set `count` = #{count,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, `count`
+    from count
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, `count`
+    from count
+  </select>
+  <!-- added -->
+  <select id="count" resultMap="BaseResultMap">
+  select count
+  from count
+  where id=1
+  </select>
+  <update id="updateone" parameterType="com.ishang.doki.entity.Count">
+  update count
+  set count=count+1
+  where id=1
+  </update>
+  
+  
+</mapper>

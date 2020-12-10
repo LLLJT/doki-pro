@@ -1,0 +1,365 @@
+html {
+	width: 94.9375rem;
+	height: 93.75rem;
+	margin: auto;
+}
+
+body {
+	background:url(../images/background.jpg) no-repeat;
+	
+	background-size:1519px 1500px;
+	margin: auto;
+	padding: auto;
+}
+
+.top {
+	position: fixed;
+	top: 0px;
+	width: 94.9375rem;
+	height: 3.75rem;
+	color: white;
+	background-color: rgba(21, 41, 80, 0.8);
+	z-index: 1;
+}
+
+.topnb ul {
+	position: fixed;
+	width: 94.9375rem;
+	height: 3.75rem;
+	list-style-type: none;
+	white-space: nowrap;
+	overflow: hidden;
+	margin-left: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+.topnb ul img {
+	position: relative;
+	margin-left: 5%;
+	margin-right: 5%;
+	width: 4.0625rem;
+	height: 100%;
+	float: left;
+}
+
+.topnb li {
+	position: relative;
+	margin-top: 1.125rem;
+	font-size: 1.125rem;
+	float: left;
+	/* 浣縧i鍐呭妯悜娴姩锛屽嵆妯悜鎺掑垪  */
+	margin-right: 5%;
+	/* 涓や釜li涔嬮棿鐨勮窛绂�*/
+	overflow: hidden;
+}
+
+.topnb li a {
+	/* 璁剧疆閾炬帴鍐呭鏄剧ず鐨勬牸寮�*/
+	display: block;
+	/*閾炬帴鏄剧ず涓哄潡鍏冪礌鍙娇鏁翠釜閾炬帴鍖哄煙鍙偣鍑� */
+	color: white;
+	text-align: center;
+	padding: 0.1875rem;
+	overflow: hidden;
+	text-decoration: none;
+	/* 鍘婚櫎涓嬪垝绾� */
+}
+
+.topnb li a:hover {
+	/* 榧犳爣閫変腑鏃秝鏂囧瓧鍙樼豢 */
+	color: rgba(1, 248, 90);
+}
+
+.search {
+	float: left;
+	height: 1.5625rem;
+	margin-left: 20%;
+	margin-top: 1.125rem;
+	border-radius: 1.25rem 1.25rem 1.25rem 1.25rem;
+	background-color: white;
+	border: none;
+	outline: medium;
+}
+
+.topnb span {
+	position: relative;
+	margin-top: 1.125rem;
+	font-size: 1.125rem;
+	float: right;
+	margin-right: 5%;
+	overflow: hidden;
+}
+
+.topnb span a {
+	/* 璁剧疆閾炬帴鍐呭鏄剧ず鐨勬牸寮�*/
+	display: block;
+	/*閾炬帴鏄剧ず涓哄潡鍏冪礌鍙娇鏁翠釜閾炬帴鍖哄煙鍙偣鍑� */
+	color: white;
+	text-align: center;
+	padding: 0.1875rem;
+	overflow: hidden;
+	text-decoration: none;
+	/* 鍘婚櫎涓嬪垝绾� */
+}
+
+.topnb span a:hover {
+	/* 榧犳爣閫変腑鏃秝鏂囧瓧鍙樼豢 */
+	color: rgba(1, 248, 90);
+}
+
+.block {
+	position: absolute;
+	
+	
+	width: 110rem;
+	height:130rem;
+	
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+.name {
+	position: absolute;
+	width: 62.5rem;
+	height: 6rem;
+	margin-top: 0.5rem;
+	margin-left: 6rem;
+	font-size: 3rem;
+	line-height: 6rem;
+	color: black;
+}
+.rewrite {
+	position: absolute;
+	margin-top: 2.6rem;
+	margin-left: 20rem;
+}
+
+.button {
+  display: inline-block;
+  background-color: rgba(64,158,255,0.9);
+  border:white;
+  color: white;
+  text-align: center;
+  padding:8px;
+  width: 80px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: ;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '禄';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 15px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.content {
+	position: absolute;
+	width: 47rem;
+	height: 3rem;
+	margin-top: 7rem;
+	margin-left: 6rem;
+	font-size: 1.25rem;
+	line-height: 2rem;
+	color: black;
+}
+
+.catalog {
+	position: absolute;
+	margin-top: 18rem;
+	margin-left: 0rem;
+	color: black;
+}
+
+.catalog1 {
+	position: absolute;
+	width: 6rem;
+	margin-top: -1rem;
+	margin-left: 10rem;
+	font-size: 1.25rem;
+	line-height: 2rem;
+	color: black;
+}
+
+.catalog2 {
+	position: absolute;
+	width: 6rem;
+	margin-top: -1.05rem;
+	margin-left: 15rem;
+	font-size: 0.9375rem;
+	line-height: 2rem;
+	color: black;
+}
+
+.catalog3 {
+	position: absolute;
+	width: 6rem;
+	margin-top: 1.05rem;
+	margin-left: 15rem;
+	font-size: 0.9375rem;
+	line-height: 2rem;
+	color: black;
+}
+
+.catalog4 {
+	position: absolute;
+	width: 6rem;
+	margin-top: 3rem;
+	margin-left: 15rem;
+	font-size: 0.9375rem;
+	line-height: 2rem;
+	color: black;
+}
+
+.catalog5 {
+	position: absolute;
+	width: 3rem;
+	margin-top: 4.8rem;
+	margin-left: 15rem;
+	font-size: 0.9375rem;
+	line-height: 2rem;
+	color: black;
+}
+
+.title1 {
+	position: absolute;
+	margin-top: 28rem;
+	margin-left: 5rem;
+	color: black;
+}
+
+.title1 span {
+	position: absolute;
+	width: auto;
+	font-size: 1.25rem;
+}
+
+.title1 p {
+	position: absolute;
+	margin-top: 3rem;
+	line-height: 1.25rem;
+	width: 47rem;
+}
+
+.title2 {
+	position: absolute;
+	margin-top: 40rem;
+	margin-left: 5rem;
+	color: black;
+}
+
+.title2 span {
+	position: absolute;
+	width: auto;
+	font-size: 1.25rem;
+}
+
+.title2 p {
+	position: absolute;
+	margin-top: 3rem;
+	line-height: 1.25rem;
+	width: 47rem;
+}
+
+
+.title3 {
+	position: absolute;
+	margin-top: 52em;
+	margin-left: 5rem;
+	color: black;
+}
+
+.title3 span {
+	position: absolute;
+	width: auto;
+	font-size: 1.25rem;
+}
+
+.title3 p {
+	position: absolute;
+	margin-top: 3rem;
+	line-height: 1.25rem;
+	width: 47rem;
+}
+.down{
+	position: absolute;
+	top: 1380px;
+	width: 1519px;
+	height: 120px;
+	color: white;
+	background-color:rgba(21,41,80,0.8);
+}
+.down1{
+	position:absolute;
+	width: 180px;
+	margin-top: 20px;
+	margin-left: 240px;
+	color: white;
+	text-align:center;
+	font-size: 40px;
+}
+.down2{
+	position:absolute;
+	width: 180px;
+	margin-top: 70px;
+	margin-left: 240px;
+	color: white;
+	text-align:center;
+	font-size: 20px;
+}
+.down3{
+	position:absolute;
+	width: 180px;
+	margin-top: 30px;
+	margin-left: 1040px;
+	color: white;
+	text-align:center;
+	font-size: 18px;
+}
+.down4{
+	position:absolute;
+	width: 180px;
+	margin-top: 30px;
+	margin-left: 1140px;
+	color: white;
+	text-align:center;
+	font-size: 18px;
+}
+.down5{
+	position:absolute;
+	width: 180px;
+	margin-top: 65px;
+	margin-left: 1040px;
+	color: white;
+	text-align:center;
+	font-size: 18px;
+}
+.down6{
+	position:absolute;
+	width: 180px;
+	margin-top: 65px;
+	margin-left: 1140px;
+	color: white;
+	text-align:center;
+	font-size: 18px;
+}
+

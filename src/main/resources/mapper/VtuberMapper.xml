@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ishang.doki.dao.VtuberMapper">
+  <resultMap id="BaseResultMap" type="com.ishang.doki.entity.Vtuber">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="pid" jdbcType="INTEGER" property="pid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="haircolor" jdbcType="VARCHAR" property="haircolor" />
+    <result column="height" jdbcType="DOUBLE" property="height" />
+    <result column="weight" jdbcType="DOUBLE" property="weight" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="birth" jdbcType="VARCHAR" property="birth" />
+    <result column="xingzuo" jdbcType="VARCHAR" property="xingzuo" />
+    <result column="group" jdbcType="VARCHAR" property="group" />
+    <result column="mengpoint" jdbcType="VARCHAR" property="mengpoint" />
+    <result column="intro" jdbcType="VARCHAR" property="intro" />
+    <result column="img1" jdbcType="VARCHAR" property="img1" />
+    <result column="address1" jdbcType="VARCHAR" property="address1" />
+    <result column="img2" jdbcType="VARCHAR" property="img2" />
+    <result column="address2" jdbcType="VARCHAR" property="address2" />
+    <result column="img3" jdbcType="VARCHAR" property="img3" />
+    <result column="address3" jdbcType="VARCHAR" property="address3" />
+    <result column="fannum" jdbcType="INTEGER" property="fannum" />
+    <result column="del_flag" jdbcType="TINYINT" property="delFlag" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from vtuber
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ishang.doki.entity.Vtuber">
+    insert into vtuber (id, pid, `name`, 
+      haircolor, height, weight, 
+      age, birth, xingzuo, `group`, 
+      mengpoint, intro, img1, 
+      address1, img2, address2, 
+      img3, address3, fannum, 
+      del_flag)
+    values (#{id,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{haircolor,jdbcType=VARCHAR}, #{height,jdbcType=DOUBLE}, #{weight,jdbcType=DOUBLE}, 
+      #{age,jdbcType=INTEGER}, #{birth,jdbcType=DATE}, #{xingzuo,jdbcType=VARCHAR}, #{group,jdbcType=VARCHAR}, 
+      #{mengpoint,jdbcType=VARCHAR}, #{intro,jdbcType=VARCHAR}, #{img1,jdbcType=VARCHAR}, 
+      #{address1,jdbcType=VARCHAR}, #{img2,jdbcType=VARCHAR}, #{address2,jdbcType=VARCHAR}, 
+      #{img3,jdbcType=VARCHAR}, #{address3,jdbcType=VARCHAR}, #{fannum,jdbcType=INTEGER}, 
+      #{delFlag,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.ishang.doki.entity.Vtuber">
+    update vtuber
+    set pid = #{pid,jdbcType=INTEGER},
+      `name` = #{name,jdbcType=VARCHAR},
+      haircolor = #{haircolor,jdbcType=VARCHAR},
+      height = #{height,jdbcType=DOUBLE},
+      weight = #{weight,jdbcType=DOUBLE},
+      age = #{age,jdbcType=INTEGER},
+      birth = #{birth,jdbcType=DATE},
+      xingzuo = #{xingzuo,jdbcType=VARCHAR},
+      `group` = #{group,jdbcType=VARCHAR},
+      mengpoint = #{mengpoint,jdbcType=VARCHAR},
+      intro = #{intro,jdbcType=VARCHAR},
+      img1 = #{img1,jdbcType=VARCHAR},
+      address1 = #{address1,jdbcType=VARCHAR},
+      img2 = #{img2,jdbcType=VARCHAR},
+      address2 = #{address2,jdbcType=VARCHAR},
+      img3 = #{img3,jdbcType=VARCHAR},
+      address3 = #{address3,jdbcType=VARCHAR},
+      fannum = #{fannum,jdbcType=INTEGER},
+      del_flag = #{delFlag,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, pid, `name`, haircolor, height, weight, age, birth, xingzuo, `group`, 
+    mengpoint, intro, img1, address1, img2, address2, img3, address3, fannum, del_flag
+    from vtuber
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, pid, `name`, haircolor, height, weight, age, birth, xingzuo, `group`, 
+    mengpoint, intro, img1, address1, img2, address2, img3, address3, fannum, del_flag
+    from vtuber
+    order by fannum desc
+  </select>
+  <select id="searchLike" resultMap="BaseResultMap">
+  select *
+  from vtuber 
+  where name like concat('%',#{name},'%')
+  
+  </select>
+</mapper>

@@ -1,0 +1,274 @@
+html {
+	width: 94.9375rem;
+	height: 93.75rem;
+	margin: auto;
+}
+
+body {
+	background:url(../images/background.jpg) no-repeat;/* 鑳屾櫙鍥剧墖  */
+	background-size:1519px 1500px;
+	margin: auto;
+	padding:auto;
+}
+
+.top {
+	position: fixed;
+	top: 0px;
+	width: 94.9375rem;
+	height: 3.75rem;
+	color: white;
+	background-color: rgba(21, 41, 80, 0.8);
+	z-index: 1;
+}
+
+.topnb ul {
+	position: fixed;
+	width: 94.9375rem;
+	height: 3.75rem;
+	list-style-type: none;
+	white-space: nowrap;
+	overflow: hidden;
+	margin-left: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+.topnb ul img {
+	position: relative;
+	margin-left: 5%;
+	margin-right: 5%;
+	width: 4.0625rem;
+	height: 100%;
+	float: left;
+}
+
+.topnb li {
+	position: relative;
+	margin-top: 1.125rem;
+	font-size: 1.125rem;
+	float: left;
+	/* 浣縧i鍐呭妯悜娴姩锛屽嵆妯悜鎺掑垪  */
+	margin-right: 5%;
+	/* 涓や釜li涔嬮棿鐨勮窛绂�*/
+	overflow: hidden;
+}
+
+.topnb li a {
+	/* 璁剧疆閾炬帴鍐呭鏄剧ず鐨勬牸寮�*/
+	display: block;
+	/*閾炬帴鏄剧ず涓哄潡鍏冪礌鍙娇鏁翠釜閾炬帴鍖哄煙鍙偣鍑� */
+	color: white;
+	text-align: center;
+	padding: 0.1875rem;
+	overflow: hidden;
+	text-decoration: none;
+	/* 鍘婚櫎涓嬪垝绾� */
+}
+
+.topnb li a:hover {
+	/* 榧犳爣閫変腑鏃秝鏂囧瓧鍙樼豢 */
+	color: rgba(1, 248, 90);
+}
+
+.search {
+	float: left;
+	height: 1.5625rem;
+	margin-left: 20%;
+	margin-top: 1.125rem;
+	border-radius: 1.25rem 1.25rem 1.25rem 1.25rem;
+	background-color: white;
+	border: none;
+	outline: medium;
+}
+
+.topnb span {
+	position: relative;
+	margin-top: 1.125rem;
+	font-size: 1.125rem;
+	float: right;
+	margin-right: 5%;
+	overflow: hidden;
+}
+
+.topnb span a {
+	/* 璁剧疆閾炬帴鍐呭鏄剧ず鐨勬牸寮�*/
+	display: block;
+	/*閾炬帴鏄剧ず涓哄潡鍏冪礌鍙娇鏁翠釜閾炬帴鍖哄煙鍙偣鍑� */
+	color: white;
+	text-align: center;
+	padding: 0.1875rem;
+	overflow: hidden;
+	text-decoration: none;
+	/* 鍘婚櫎涓嬪垝绾� */
+}
+
+.topnb span a:hover {
+	/* 榧犳爣閫変腑鏃秝鏂囧瓧鍙樼豢 */
+	color: rgba(1, 248, 90);
+}
+
+.block {
+	position: absolute;
+	margin-top: 4.75rem;
+	margin-left: 16.25rem;
+	width: 62.5rem;
+	height: 63rem;
+	color: white;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+.doki span {
+	position: absolute;
+	width: 62.5rem;
+	height: 5rem;
+	font-size: 3rem;
+	line-height: 5rem;
+	color: rgba(21, 41, 80);
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.doki p {
+	position: absolute;
+	width: 62.5rem;
+	height: 13rem;
+	margin-top: 5rem;
+	font-size: 1.125rem;
+	line-height: 2.5rem;
+	color: black;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.jianjie {
+	position: absolute;
+	width: 62.5rem;
+	height: 4rem;
+	margin-top: 18rem;
+	font-size: 2rem;
+	line-height: 4rem;
+	color: white;
+	background-color: rgba(21, 41, 80, 0.8);
+}
+
+.jianjie p {
+	position: absolute;
+	width: 62.5rem;
+	height: 11rem;
+	font-size: 1.125rem;
+	line-height: 2.5rem;
+	color: black;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.xuni {
+	position: absolute;
+	width: 62.5rem;
+	height: 4rem;
+	margin-top: 33rem;
+	font-size: 2rem;
+	line-height: 4rem;
+	color: white;
+	background-color: rgba(21, 41, 80, 0.8);
+}
+
+.xuni p {
+	position: absolute;
+	width: 62.5rem;
+	height: 11rem;
+	font-size: 1.125rem;
+	line-height: 2.5rem;
+	color: black;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.tese {
+	position: absolute;
+	width: 62.5rem;
+	height: 4rem;
+	margin-top: 48rem;
+	font-size: 2rem;
+	line-height: 4rem;
+	color: white;
+	background-color: rgba(21, 41, 80, 0.8);
+}
+
+.tese p {
+	position: absolute;
+	width: 62.5rem;
+	height: 11rem;
+	font-size: 1.125rem;
+	line-height: 2.5rem;
+	color: black;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.down {
+	position: absolute;
+	top: 86.25rem;
+	width: 94.9375rem;
+	height: 7.5rem;
+	color: white;
+	background-color: rgba(21, 41, 80, 0.8);
+}
+
+.down{
+	position: absolute;
+	top: 1380px;
+	width: 1519px;
+	height: 120px;
+	color: white;
+	background-color:rgba(21,41,80,0.8);
+}
+.down1{
+	position:absolute;
+	width: 180px;
+	margin-top: 20px;
+	margin-left: 240px;
+	color: white;
+	text-align:center;
+	font-size: 40px;
+}
+.down2{
+	position:absolute;
+	width: 180px;
+	margin-top: 70px;
+	margin-left: 240px;
+	color: white;
+	text-align:center;
+	font-size: 20px;
+}
+.down3{
+	position:absolute;
+	width: 180px;
+	margin-top: 30px;
+	margin-left: 1040px;
+	color: white;
+	text-align:center;
+	font-size: 18px;
+}
+.down4{
+	position:absolute;
+	width: 180px;
+	margin-top: 30px;
+	margin-left: 1140px;
+	color: white;
+	text-align:center;
+	font-size: 18px;
+}
+.down5{
+	position:absolute;
+	width: 180px;
+	margin-top: 65px;
+	margin-left: 1040px;
+	color: white;
+	text-align:center;
+	font-size: 18px;
+}
+.down6{
+	position:absolute;
+	width: 180px;
+	margin-top: 65px;
+	margin-left: 1140px;
+	color: white;
+	text-align:center;
+	font-size: 18px;
+}

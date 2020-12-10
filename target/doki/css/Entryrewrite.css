@@ -1,0 +1,371 @@
+html {
+	width: 94.9375rem;
+	height: 93.75rem;
+	margin: auto;
+}
+
+body {
+	background: url(../src/背景.jpg) no-repeat;
+	* //* 背景图片  */
+	background-size: 100% 93.75rem;
+	background-size: 100% 93.75rem;
+	margin: auto;
+	padding: auto;
+}
+
+.top {
+	position: fixed;
+	top: 0px;
+	width: 94.9375rem;
+	height: 3.75rem;
+	color: white;
+	background-color: rgba(21, 41, 80, 0.8);
+	z-index: 1;
+}
+
+.topnb ul {
+	position: fixed;
+	width: 94.9375rem;
+	height: 3.75rem;
+	list-style-type: none;
+	white-space: nowrap;
+	overflow: hidden;
+	margin-left: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+.topnb ul img {
+	position: relative;
+	margin-left: 5%;
+	margin-right: 5%;
+	width: 4.0625rem;
+	height: 100%;
+	float: left;
+}
+
+.topnb li {
+	position: relative;
+	margin-top: 1.125rem;
+	font-size: 1.125rem;
+	float: left;
+	/* 使li内容横向浮动，即横向排列  */
+	margin-right: 5%;
+	/* 两个li之间的距离*/
+	overflow: hidden;
+}
+
+.topnb li a {
+	/* 设置链接内容显示的格式*/
+	display: block;
+	/*链接显示为块元素可使整个链接区域可点击 */
+	color: white;
+	text-align: center;
+	padding: 0.1875rem;
+	overflow: hidden;
+	text-decoration: none;
+	/* 去除下划线 */
+}
+
+.topnb li a:hover {
+	/* 鼠标选中时w文字变绿 */
+	color: rgba(1, 248, 90);
+}
+
+.search {
+	float: left;
+	height: 1.5625rem;
+	margin-left: 20%;
+	margin-top: 1.125rem;
+	border-radius: 1.25rem 1.25rem 1.25rem 1.25rem;
+	background-color: white;
+	border: none;
+	outline: medium;
+}
+
+.topnb span {
+	position: relative;
+	margin-top: 1.125rem;
+	font-size: 1.125rem;
+	float: right;
+	margin-right: 5%;
+	overflow: hidden;
+}
+
+.topnb span a {
+	/* 设置链接内容显示的格式*/
+	display: block;
+	/*链接显示为块元素可使整个链接区域可点击 */
+	color: white;
+	text-align: center;
+	padding: 0.1875rem;
+	overflow: hidden;
+	text-decoration: none;
+	/* 去除下划线 */
+}
+
+.topnb span a:hover {
+	/* 鼠标选中时w文字变绿 */
+	color: rgba(1, 248, 90);
+}
+
+.block {
+	position: absolute;
+	margin-top: 3.75rem;
+	margin-left: 16.25rem;
+	width: 62.5rem;
+	height: 82.3rem;
+	color: white;
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+.name {
+	position: absolute;
+	width: 62.5rem;
+	height: 6rem;
+	margin-top: 0.5rem;
+	margin-left: 6rem;
+	font-size: 3rem;
+	line-height: 6rem;
+	color: black;
+}
+.rewrite {
+	position: absolute;
+	margin-top: 2.6rem;
+	margin-left: 20rem;
+}
+
+.button {
+  display: inline-block;
+  background-color: rgba(64,158,255,0.9);
+  border:white;
+  color: white;
+  text-align: center;
+  padding:8px;
+  width: 80px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: ;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 15px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.content {
+	position: absolute;
+	width: 47rem;
+	height: 3rem;
+	margin-top: 7rem;
+	margin-left: 6rem;
+	font-size: 1.25rem;
+	line-height: 2rem;
+	color: black;
+}
+
+.catalog {
+	position: absolute;
+	margin-top: 18rem;
+	margin-left: 0rem;
+	color: black;
+}
+
+.catalog1 {
+	position: absolute;
+	width: 6rem;
+	margin-top: -1rem;
+	margin-left: 10rem;
+	font-size: 1.25rem;
+	line-height: 2rem;
+	color: black;
+}
+
+.catalog2 {
+	position: absolute;
+	width: 6rem;
+	margin-top: -1.05rem;
+	margin-left: 15rem;
+	font-size: 0.9375rem;
+	line-height: 2rem;
+	color: black;
+}
+
+.catalog3 {
+	position: absolute;
+	width: 6rem;
+	margin-top: 1.05rem;
+	margin-left: 15rem;
+	font-size: 0.9375rem;
+	line-height: 2rem;
+	color: black;
+}
+
+.catalog4 {
+	position: absolute;
+	width: 6rem;
+	margin-top: 3rem;
+	margin-left: 15rem;
+	font-size: 0.9375rem;
+	line-height: 2rem;
+	color: black;
+}
+
+.catalog5 {
+	position: absolute;
+	width: 3rem;
+	margin-top: 4.8rem;
+	margin-left: 15rem;
+	font-size: 0.9375rem;
+	line-height: 2rem;
+	color: black;
+}
+
+.title1 {
+	position: absolute;
+	margin-top: 28rem;
+	margin-left: 5rem;
+	color: black;
+}
+
+.title1 span {
+	position: absolute;
+	width: auto;
+	font-size: 1.25rem;
+}
+
+.title1 form {
+	position: absolute;
+	margin-top: 3rem;
+	line-height: 1.25rem;
+	width: 47rem;
+}
+
+.title2 {
+	position: absolute;
+	margin-top: 40rem;
+	margin-left: 5rem;
+	color: black;
+}
+
+.title2 span {
+	position: absolute;
+	width: auto;
+	font-size: 1.25rem;
+}
+
+.title2 form {
+	position: absolute;
+	margin-top: 3rem;
+	line-height: 1.25rem;
+	width: 47rem;
+}
+
+
+.title3 {
+	position: absolute;
+	margin-top: 52em;
+	margin-left: 5rem;
+	color: black;
+}
+
+.title3 span {
+	position: absolute;
+	width: auto;
+	font-size: 1.25rem;
+}
+
+.title3 form {
+	position: absolute;
+	margin-top: 3rem;
+	line-height: 1.25rem;
+	width: 47rem;
+}
+.down {
+	position: absolute;
+	top: 86.25rem;
+	width: 94.9375rem;
+	height: 7.5rem;
+	color: white;
+	background-color: rgba(21, 41, 80, 0.8);
+}
+
+.down1 {
+	position: absolute;
+	width: 11.25rem;
+	margin-top: 1.25rem;
+	margin-left: 15rem;
+	color: white;
+	text-align: center;
+	font-size: 2.5rem;
+}
+
+.down2 {
+	position: absolute;
+	width: 11.25rem;
+	margin-top: 4.375rem;
+	margin-left: 15rem;
+	color: white;
+	text-align: center;
+	font-size: 1.25rem;
+}
+
+.down3 {
+	position: absolute;
+	width: 11.25rem;
+	margin-top: 1.875rem;
+	margin-left: 65rem;
+	color: white;
+	text-align: center;
+	font-size: 1.125rem;
+}
+
+.down4 {
+	position: absolute;
+	width: 11.25rem;
+	margin-top: 1.875rem;
+	margin-left: 71.25rem;
+	color: white;
+	text-align: center;
+	font-size: 1.125rem;
+}
+
+.down5 {
+	position: absolute;
+	width: 11.25rem;
+	margin-top: 4.0625rem;
+	margin-left: 65rem;
+	color: white;
+	text-align: center;
+	font-size: 1.125rem;
+}
+
+.down6 {
+	position: absolute;
+	width: 11.25rem;
+	margin-top: 4.0625rem;
+	margin-left: 71.25rem;
+	color: white;
+	text-align: center;
+	font-size: 1.125rem;
+}

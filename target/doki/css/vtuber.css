@@ -1,0 +1,358 @@
+html {
+	width: 94.9375rem;
+	height: 93.75rem;
+	margin: auto;
+}
+
+body {
+	background: url(../images/background.jpg) no-repeat;
+	background-size: 1600px 1600px;
+	
+	margin: auto;
+	padding: auto;
+}
+
+.top {
+	position: fixed;
+	top: 0px;
+	width: 94.9375rem;
+	height: 3.75rem;
+	color: white;
+	background-color: rgba(21, 41, 80, 0.8);
+	z-index: 1;
+}
+
+.topnb ul {
+	position: fixed;
+	width: 94.9375rem;
+	height: 3.75rem;
+	list-style-type: none;
+	white-space: nowrap;
+	overflow: hidden;
+	margin-left: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+.topnb ul img {
+	position: relative;
+	margin-left: 5%;
+	margin-right: 5%;
+	width: 4.0625rem;
+	height: 100%;
+	float: left;
+}
+
+.topnb li {
+	position: relative;
+	margin-top: 1.125rem;
+	font-size: 1.125rem;
+	float: left;
+	/* 浣縧i鍐呭妯悜娴姩锛屽嵆妯悜鎺掑垪  */
+	margin-right: 5%;
+	/* 涓や釜li涔嬮棿鐨勮窛绂�*/
+	overflow: hidden;
+}
+
+.topnb li a {
+	/* 璁剧疆閾炬帴鍐呭鏄剧ず鐨勬牸寮�*/
+	display: block;
+	/*閾炬帴鏄剧ず涓哄潡鍏冪礌鍙娇鏁翠釜閾炬帴鍖哄煙鍙偣鍑� */
+	color: white;
+	text-align: center;
+	padding: 0.1875rem;
+	overflow: hidden;
+	text-decoration: none;
+	/* 鍘婚櫎涓嬪垝绾� */
+}
+
+.topnb li a:hover {
+	/* 榧犳爣閫変腑鏃秝鏂囧瓧鍙樼豢 */
+	color: rgba(1, 248, 90);
+}
+
+.search {
+	float: left;
+	height: 1.5625rem;
+	margin-left: 20%;
+	margin-top: 1.125rem;
+	border-radius: 1.25rem 1.25rem 1.25rem 1.25rem;
+	background-color: white;
+	border: none;
+	outline: medium;
+}
+
+.topnb span {
+	position: relative;
+	margin-top: 1.125rem;
+	font-size: 1.125rem;
+	float: right;
+	margin-right: 5%;
+	overflow: hidden;
+}
+
+.topnb span a {
+	/* 璁剧疆閾炬帴鍐呭鏄剧ず鐨勬牸寮�*/
+	display: block;
+	/*閾炬帴鏄剧ず涓哄潡鍏冪礌鍙娇鏁翠釜閾炬帴鍖哄煙鍙偣鍑� */
+	color: white;
+	text-align: center;
+	padding: 0.1875rem;
+	overflow: hidden;
+	text-decoration: none;
+	/* 鍘婚櫎涓嬪垝绾� */
+}
+
+.topnb span a:hover {
+	/* 榧犳爣閫変腑鏃秝鏂囧瓧鍙樼豢 */
+	color: rgba(1, 248, 90);
+}
+
+.block {
+	position: absolute;
+	margin-top: 3.75rem;
+	margin-left: 16.25rem;
+	width: 62.5rem;
+	height:1200px;
+	color: white;
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+.name {
+	position: absolute;
+	width: 62.5rem;
+	height: 6rem;
+	margin-top: 0.5rem;
+	margin-left: 2rem;
+	font-size: 3rem;
+	line-height: 6rem;
+	color: black;
+}
+
+.img img {
+	position: absolute;
+	margin-top: 2rem;
+	margin-left: 45rem;
+	width: 15rem;
+	height: 22rem;
+}
+
+.content {
+	position: absolute;
+	width: 40rem;
+	height: 3rem;
+	margin-top: 7rem;
+	margin-left: 2rem;
+	font-size: 1.25rem;
+	line-height: 2rem;
+	color: black;
+}
+
+.data {
+	position: absolute;
+	width: 40rem;
+	margin-top: 12rem;
+	margin-left: 5rem;
+	font-size: 0.9rem;
+	line-height:1.3rem;
+	color: black;
+}
+.data dt{
+	float: left;
+}
+.data dd{
+	margin-left: 8.25rem;
+}
+.catalog {
+	position: absolute;
+	margin-top: 28rem;
+	margin-left: 4rem;
+	color: black;
+}
+.catalog1{
+	position: absolute;
+	width: 3rem;
+	margin-left: 3rem;
+	font-size: 1.25rem;
+	line-height: 2rem;
+	color: black;
+}
+.catalog2{
+	position: absolute;
+	width: 3rem;
+	margin-top: -1.05rem;
+	margin-left: 15rem;
+	font-size: 0.9375rem;
+	line-height: 2rem;
+	color: black;
+}
+.catalog3{
+	position: absolute;
+	width: 3rem;
+	margin-top: 1.05rem;
+	margin-left: 15rem;
+	font-size: 0.9375rem;
+	line-height: 2rem;
+	color: black;
+}
+.catalog4{
+	position: absolute;
+	width: 3rem;
+	margin-top: -1.05rem;
+	margin-left: 35rem;
+	font-size: 0.9375rem;
+	line-height: 2rem;
+	color: black;
+}
+.catalog5{
+	position: absolute;
+	width: 3rem;
+	margin-top: 1.05rem;
+	margin-left: 35rem;
+	font-size: 0.9375rem;
+	line-height: 2rem;
+	color: black;
+}
+.synopsis {
+	position: absolute;
+	margin-top: 35rem;
+	margin-left: 5rem;
+	color: black;
+}
+.synopsis span{
+	position: absolute;
+	width: 4rem;
+	font-size: 1.25rem;
+}
+.synopsis p{
+	position: absolute;
+	margin-top: 3rem;
+	line-height: 1.25rem;
+	width: 50rem;
+}
+.image {
+	position: absolute;
+	margin-top: 45rem;
+	margin-left: 5rem;
+	color: black;
+}
+.image span{
+	position: absolute;
+	width: 4rem;
+	font-size: 1.25rem;
+}
+.image p{
+	position: absolute;
+	margin-top: 3rem;
+	line-height: 1.25rem;
+	width: 30rem;
+}
+.image img{
+	position: absolute;
+	margin-top: 1rem;
+	margin-left: 43rem;
+	width: 10rem;
+	height: 13rem;
+}
+.anecdote{
+	position: absolute;
+	margin-top: 57.5rem;
+	margin-left: 5rem;
+	color: black;
+}
+.anecdote span{
+	position: absolute;
+	width: 4rem;
+	font-size: 1.25rem;
+}
+.anecdote p{
+	position: absolute;
+	margin-top: 3rem;
+	line-height: 1.25rem;
+	width: 50rem;
+}
+.works {
+	position: absolute;
+	margin-top: 72.5rem;
+	margin-left: 5rem;
+	color: black;
+}
+.works span{
+	position: absolute;
+	width: 4rem;
+	font-size: 1.25rem;
+}
+.works p{
+	position: absolute;
+	margin-top: 3rem;
+	line-height: 1.25rem;
+	width: 50rem;
+}
+.down {
+	position: absolute;
+	top: 1380px;
+	width: 1519px;
+	height: 120px;
+	color: white;
+	background-color: rgba(21, 41, 80, 0.8);
+}
+
+.down1 {
+	position: absolute;
+	width: 11.25rem;
+	margin-top: 1.25rem;
+	margin-left: 15rem;
+	color: white;
+	text-align: center;
+	font-size: 2.5rem;
+}
+
+.down2 {
+	position: absolute;
+	width: 11.25rem;
+	margin-top: 4.375rem;
+	margin-left: 15rem;
+	color: white;
+	text-align: center;
+	font-size: 1.25rem;
+}
+
+.down3 {
+	position: absolute;
+	width: 11.25rem;
+	margin-top: 1.875rem;
+	margin-left: 65rem;
+	color: white;
+	text-align: center;
+	font-size: 1.125rem;
+}
+
+.down4 {
+	position: absolute;
+	width: 11.25rem;
+	margin-top: 1.875rem;
+	margin-left: 71.25rem;
+	color: white;
+	text-align: center;
+	font-size: 1.125rem;
+}
+
+.down5 {
+	position: absolute;
+	width: 11.25rem;
+	margin-top: 4.0625rem;
+	margin-left: 65rem;
+	color: white;
+	text-align: center;
+	font-size: 1.125rem;
+}
+
+.down6 {
+	position: absolute;
+	width: 11.25rem;
+	margin-top: 4.0625rem;
+	margin-left: 71.25rem;
+	color: white;
+	text-align: center;
+	font-size: 1.125rem;
+}

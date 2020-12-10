@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ishang.doki.dao.SearchresultMapper">
+  <resultMap id="BaseResultMap" type="com.ishang.doki.entity.Searchresult">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="searchtitle" jdbcType="VARCHAR" property="searchtitle" />
+    <result column="searchcontent" jdbcType="VARCHAR" property="searchcontent" />
+    <result column="searchtime" jdbcType="DATE" property="searchtime" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from searchresult
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ishang.doki.entity.Searchresult">
+    insert into searchresult (id, searchtitle, searchcontent, 
+      searchtime, userid)
+    values (#{id,jdbcType=INTEGER}, #{searchtitle,jdbcType=VARCHAR}, #{searchcontent,jdbcType=VARCHAR}, 
+      #{searchtime,jdbcType=DATE}, #{userid,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.ishang.doki.entity.Searchresult">
+    update searchresult
+    set searchtitle = #{searchtitle,jdbcType=VARCHAR},
+      searchcontent = #{searchcontent,jdbcType=VARCHAR},
+      searchtime = #{searchtime,jdbcType=DATE},
+      userid = #{userid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, searchtitle, searchcontent, searchtime, userid
+    from searchresult
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, searchtitle, searchcontent, searchtime, userid
+    from searchresult
+  </select>
+  <!-- added by ljt -->
+  <select id="selectbyuserid" resultMap="BaseResultMap">
+  select *
+  from searchresult
+  where userid=#{userid}
+  order by searchtime desc
+  
+  </select>
+  
+  
+  
+</mapper>

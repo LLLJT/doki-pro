@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ishang.doki.dao.BlogMapper">
+ 
+  <resultMap id="BaseResultMap" type="com.ishang.doki.entity.Blog">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="blogtitle" jdbcType="VARCHAR" property="blogtitle" />
+    <result column="blogcontent" jdbcType="VARCHAR" property="blogcontent" />
+    <result column="blogtypeid" jdbcType="INTEGER" property="blogtypeid" />
+    <result column="blogwatch" jdbcType="VARCHAR" property="blogwatch" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="pic" jdbcType="VARCHAR" property="pic" />
+    <result column="check_flag" jdbcType="TINYINT" property="checkFlag" />
+    <result column="del_flag" jdbcType="TINYINT" property="delFlag"/>
+   
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from blog
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ishang.doki.entity.Blog">
+    insert into blog (id, blogtitle, blogcontent, 
+      blogtypeid, blogwatch, userid, 
+      pic, check_flag,del_flag)
+    values (#{id,jdbcType=INTEGER}, #{blogtitle,jdbcType=VARCHAR}, #{blogcontent,jdbcType=VARCHAR}, 
+      #{blogtypeid,jdbcType=INTEGER}, #{blogwatch,jdbcType=VARCHAR}, #{userid,jdbcType=INTEGER}, 
+      #{pic,jdbcType=VARCHAR}, #{checkFlag,jdbcType=TINYINT},#{delFlag,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.ishang.doki.entity.Blog">
+    update blog
+    set blogtitle = #{blogtitle,jdbcType=VARCHAR},
+      blogcontent = #{blogcontent,jdbcType=VARCHAR},
+      blogtypeid = #{blogtypeid,jdbcType=INTEGER},
+      blogwatch = #{blogwatch,jdbcType=VARCHAR},
+      userid = #{userid,jdbcType=INTEGER},
+      pic = #{pic,jdbcType=VARCHAR},
+      check_flag = #{checkFlag,jdbcType=TINYINT},
+      del_flag=#{delFlag,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, blogtitle, blogcontent, blogtypeid, blogwatch, userid, pic, check_flag,del_flag
+    from blog
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <!-- changed by ljt,add check_flag .if =1,show,=0,pass -->
+ 
+   <!-- added by ljt -->
+  <select id="searchLike" resultMap="BaseResultMap">
+  select blogtype.typename,user.username,blog.id, blogtitle, blogcontent,blog.blogtypeid, blogwatch, userid, pic, check_flag,blog.del_flag
+    from blog,user,blogtype
+    where  blog.userid=user.id
+    and blog.blogtypeid=blogtype.blogtypeid
+  and blogtitle like concat('%',#{blogtitle},'%')
+  
+  </select>
+  <select id="selectbytypeid" resultMap="BaseResultMap"> 
+  select user.username,blog.id, blogtitle, blogcontent, blogtypeid, blogwatch, userid, pic, check_flag,blog.del_flag
+    from blog,user
+    where  blog.userid=user.id
+    and blogtypeid=#{blogtypeid} 
+  
+  
+  </select>
+  <select id="selectcheck" resultMap="BaseResultMap">
+ select user.username,blog.id, blogtitle, blogcontent, blogtypeid, blogwatch, userid, pic, check_flag,blog.del_flag
+    from blog,user
+    where  blog.userid=user.id
+    and check_flag=0
+  
+  </select>
+  
+   <select id="selectAll" resultMap="BaseResultMap">
+    select user.username,blog.id, blogtitle, blogcontent, blogtypeid, blogwatch, userid, pic, check_flag,blog.del_flag
+    from blog,user
+    where  blog.userid=user.id
+    
+  </select>
+  <update id="blogdel" parameterType="com.ishang.doki.entity.Blog">
+  update blog
+  set del_flag=0
+  where id=#{id}
+  </update>
+   <update id="blogres" parameterType="com.ishang.doki.entity.Blog">
+  update blog
+  set del_flag=1
+  where id=#{id}
+  </update>
+   <select id="searchLikecheck" resultMap="BaseResultMap">
+  select *
+  from blog 
+  where blogtitle like concat('%',#{blogtitle},'%')
+  and check_flag=0
+  </select>
+   <update id="blogsuccess" parameterType="com.ishang.doki.entity.Blog">
+  update blog
+  set check_flag=1
+  where id=#{id}
+  </update>
+   <update id="blogfail" parameterType="com.ishang.doki.entity.Blog">
+  update blog
+  set check_flag=0
+  where id=#{id}
+  </update>
+  <select id="blogcount" resultMap="BaseResultMap">
+  select count(*) as count
+  from blog
+  
+  </select>
+  <!-- 前端显示，上一个已经被后台占用 -->
+    <select id="selectAllblog" resultMap="BaseResultMap">
+    select blogtype.typename,user.username,blog.id, blogtitle, blogcontent, blog.blogtypeid, blogwatch, userid, pic, check_flag,blog.del_flag
+    from blog,user,blogtype
+    where  blog.userid=user.id
+    and blog.blogtypeid=blogtype.blogtypeid
+    and blog.del_flag=1 and check_flag=1
+    
+  </select>
+  
+<update id="blogwatch" parameterType="com.ishang.doki.entity.Blog">
+update blog
+set blogwatch=blogwatch+1
+where id=#{id}
+</update>
+  
+  
+  
+  
+  
+  
+  
+</mapper>

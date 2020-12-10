@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ishang.doki.dao.BlogcommentMapper">
+  <resultMap id="BaseResultMap" type="com.ishang.doki.entity.Blogcomment">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="blogid" jdbcType="INTEGER" property="blogid" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="comment" jdbcType="VARCHAR" property="comment" />
+    <result column="comment_time" jdbcType="TIMESTAMP" property="commentTime" />
+    <result column="userid2" jdbcType="INTEGER" property="userid2" />
+    <result column="comment2" jdbcType="VARCHAR" property="comment2" />
+    <result column="comment_time2" jdbcType="TIMESTAMP" property="commentTime2" />
+    <result column="del_flag" jdbcType="TINYINT" property="delFlag"/>
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from blogcomment
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ishang.doki.entity.Blogcomment">
+    insert into blogcomment (id, blogid, userid, 
+      `comment`, comment_time, userid2, 
+      comment2, comment_time2,del_flag)
+    values (#{id,jdbcType=INTEGER}, #{blogid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, 
+      #{comment,jdbcType=VARCHAR}, #{commentTime,jdbcType=TIMESTAMP}, #{userid2,jdbcType=INTEGER}, 
+      #{comment2,jdbcType=VARCHAR}, #{commentTime2,jdbcType=TIMESTAMP},#{delFlag})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.ishang.doki.entity.Blogcomment">
+    update blogcomment
+    set blogid = #{blogid,jdbcType=INTEGER},
+      userid = #{userid,jdbcType=INTEGER},
+      `comment` = #{comment,jdbcType=VARCHAR},
+      comment_time = #{commentTime,jdbcType=TIMESTAMP},
+      userid2 = #{userid2,jdbcType=INTEGER},
+      comment2 = #{comment2,jdbcType=VARCHAR},
+      comment_time2 = #{commentTime2,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, blogid, userid, `comment`, comment_time, userid2, comment2, comment_time2
+    from blogcomment
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <!-- changed by ljt -->
+  <select id="selectAll" resultMap="BaseResultMap">
+    select user1.username as username1,user2.username as username2,distinct blogcomment.id, blogid, userid, `comment`, comment_time, userid2, comment2, comment_time2,blogcomment.del_flag
+    from blogcomment,`user` as user1,user as user2
+    where blogid=#{blogid}
+and blogcomment.userid =`user1`.id
+and blogcomment.userid2=user2.id
+  </select>
+ <!-- 列出所有评论（非重复） -->
+ <select id="findcomment" resultMap="BaseResultMap">
+ select  DISTINCT `comment`
+from blogcomment
+where blogid=${blogid}
+ </select>
+  <!-- 通过评论查找对应的username,create_time -->
+<select id="findcommentdetail" resultMap="BaseResultMap">
+  select DISTINCT comment_time,blogcomment.userid,user.username as username1
+from blogcomment,USER
+where `comment`=#{comment}
+and `user`.id=blogcomment.userid
+</select>
+  <!-- 查找一条评论下的所有回复 -->
+  <select id="findanswer" resultMap="BaseResultMap">
+  select blogid,comment,comment_time,userid,comment2,comment_time2,user.username as username2
+from blogcomment,user
+where blogid=#{blogid}
+and userid=#{userid}
+and user.id=blogcomment.userid2
+  
+  </select>
+  
+  
+  
+  
+</mapper>

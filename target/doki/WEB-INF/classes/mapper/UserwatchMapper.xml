@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ishang.doki.dao.UserwatchMapper">
+  <resultMap id="BaseResultMap" type="com.ishang.doki.entity.Userwatch">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="userid1" jdbcType="INTEGER" property="userid1" />
+    <result column="userid2" jdbcType="INTEGER" property="userid2" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from userwatch
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ishang.doki.entity.Userwatch">
+    insert into userwatch (id, userid1, userid2
+      )
+    values (#{id,jdbcType=INTEGER}, #{userid1,jdbcType=INTEGER}, #{userid2,jdbcType=INTEGER}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.ishang.doki.entity.Userwatch">
+    update userwatch
+    set userid1 = #{userid1,jdbcType=INTEGER},
+      userid2 = #{userid2,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, userid1, userid2
+    from userwatch
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, userid1, userid2
+    from userwatch
+  </select>
+  
+ 
+   <!-- 查看关注列表 -->
+  <select id="selectwatchlist" resultMap="BaseResultMap">
+  select userid2,user.username,signature,img
+  from userwatch,user
+  where userid1=#{userid1}
+  and userwatch.userid2=user.id
+  </select>
+  <!-- 粉丝列表 -->
+  <select id="selectfanlist" resultMap="BaseResultMap">
+  select userid1,user.username,signature,img
+  from userwatch,user
+  where userid2=#{userid2}
+  and userwatch.userid1=user.id
+  </select>
+  <!-- 查看是否关注，用户中心显示用 -->
+  <select id="selectifwatch" resultMap="BaseResultMap">
+  select *
+  from userwatch
+  where userid1=#{userid1}
+  and userid2=#{userid2}
+  </select>
+  <!-- 取关 -->
+<delete id="deleteone" parameterType="java.lang.Integer">
+    delete from userwatch
+    where userid1=#{userid1}
+    and userid2=#{userid2}
+  </delete>
+  
+  
+</mapper>

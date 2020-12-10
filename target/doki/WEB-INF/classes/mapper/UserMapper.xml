@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ishang.doki.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.ishang.doki.entity.User">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <id column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="roleid" jdbcType="INTEGER" property="roleid" />
+    <result column="birthday" jdbcType="VARCHAR" property="birthday" />
+    <result column="signature" jdbcType="VARCHAR" property="signature" />
+    <result column="img" jdbcType="VARCHAR" property="img" />
+    <result column="del_flag" jdbcType="TINYINT" property="delFlag" />
+  </resultMap>
+     <resultMap id="BaseResultMap1" type="com.ishang.doki.entity.Blog">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="blogtitle" jdbcType="VARCHAR" property="blogtitle" />
+    <result column="blogcontent" jdbcType="VARCHAR" property="blogcontent" />
+    <result column="blogtypeid" jdbcType="INTEGER" property="blogtypeid" />
+    <result column="blogwatch" jdbcType="VARCHAR" property="blogwatch" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="pic" jdbcType="VARCHAR" property="pic" />
+    <result column="check_flag" jdbcType="TINYINT" property="checkFlag" />
+  </resultMap>
+  
+  
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from user
+    where id = #{id,jdbcType=INTEGER}
+      and username = #{username,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.ishang.doki.entity.User">
+    insert into user (id, username, `password`, 
+      sex, telephone, roleid, 
+      birthday, signature, img, 
+      del_flag)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, #{roleid,jdbcType=INTEGER}, 
+      #{birthday,jdbcType=VARCHAR}, #{signature,jdbcType=VARCHAR}, #{img,jdbcType=VARCHAR}, 
+      #{delFlag,jdbcType=TINYINT})
+  </insert>
+  <!-- used -->
+  <update id="updateByPrimaryKey" parameterType="com.ishang.doki.entity.User">
+    update user
+    set  sex = #{sex,jdbcType=VARCHAR},
+      telephone = #{telephone,jdbcType=VARCHAR},
+      roleid = #{roleid,jdbcType=INTEGER},
+      birthday = #{birthday,jdbcType=VARCHAR},
+      signature = #{signature,jdbcType=VARCHAR}
+     
+    where id = #{id,jdbcType=INTEGER}
+      and username = #{username,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    select id, username, `password`, sex, telephone, roleid, birthday, signature, img, 
+    del_flag
+    from user
+    where id = #{id,jdbcType=INTEGER}
+      and username = #{username,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, username, `password`, sex, telephone, roleid, birthday, signature, img, 
+    del_flag
+    from user
+  </select>
+
+  
+ <!-- added by ljt -->
+   <select id="selectbyEntity" resultMap="BaseResultMap">
+  select * from user 
+  where username=#{username} 
+  and password=#{password} 
+  
+  </select>
+  <select id="getuser" resultMap="BaseResultMap">
+  select username from user
+  
+  
+  </select>
+	<select id="searchLikeuser" resultMap="BaseResultMap">
+	select *
+	from user
+	where username like concat('%',#{username},'%')
+	
+	</select>
+	
+	<!-- select top 10 donate user -->
+	
+	<select id="selectdonate" resultMap="BaseResultMap">
+select username,count(username) as count,img,signature,user.id
+from user,blog
+where `user`.id=blog.userid
+GROUP BY `user`.id,username
+ORDER BY count(username) desc
+LIMIT 0,10 
+
+	
+	</select>
+	<select id="selectbyname" resultMap="BaseResultMap">
+	select id
+	from user
+	where username=#{username}
+	</select>
+<!-- 后端用户逻辑删除 -->
+	<update id="userdel" parameterType="com.ishang.doki.entity.User">
+	update user 
+	set del_flag=0
+	where id=#{id}
+	</update>
+  <update id="userres" parameterType="com.ishang.doki.entity.User">
+  update user 
+	set del_flag=1
+	where id=#{id}
+  </update>
+  <update id="backmodifyimg" parameterType="com.ishang.doki.entity.User">
+  update user 
+  set img=#{img}
+  where id=#{id} and username=#{username}
+  
+  </update>
+  <select id="selectAllbyid" resultMap="BaseResultMap">
+  select *
+  from user
+  where id=#{id}
+  </select>
+ <update id="inspsd" parameterType="com.ishang.doki.entity.User">
+ update user
+ set password=#{password}
+ where id=#{id}
+ </update>
+  <select id="selectnamebyid" resultMap="BaseResultMap">
+  select username
+  from user
+  where id=#{id}
+  
+  </select>
+  <select id="getpic" resultMap="BaseResultMap">
+  SELECT img 
+from `user`
+where id=#{id}
+  
+  </select>
+  
+</mapper>

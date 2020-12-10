@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ishang.doki.dao.HotwordMapper">
+  <resultMap id="BaseResultMap" type="com.ishang.doki.entity.Hotword">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <id column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="wordtitle" jdbcType="VARCHAR" property="wordtitle" />
+    <result column="wordcontent" jdbcType="VARCHAR" property="wordcontent" />
+    <result column="count" jdbcType="INTEGER" property="count" />
+    <result column="checkflag" jdbcType="INTEGER" property="checkflag" />
+    <result column="typeid" jdbcType="INTEGER" property="typeid" />
+    <result column="del_flag" jdbcType="TINYINT" property="delFlag" />
+    <result column="title1" jdbcType="VARCHAR" property="title1" />
+    <result column="content1" jdbcType="VARCHAR" property="content1" />
+    <result column="title2" jdbcType="VARCHAR" property="title2" />
+    <result column="content2" jdbcType="VARCHAR" property="content2" />
+    <result column="title3" jdbcType="VARCHAR" property="title3" />
+    <result column="content3" jdbcType="VARCHAR" property="content3" />
+    <result column="uptitle" jdbcType="VARCHAR" property="uptitle" />
+    <result column="upcontent" jdbcType="VARCHAR" property="upcontent" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from hotword
+    where id = #{id,jdbcType=INTEGER}
+      and userid = #{userid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ishang.doki.entity.Hotword">
+    insert into hotword (id, userid, wordtitle, 
+      wordcontent, `count`, checkflag, 
+      typeid, del_flag, title1, 
+      content1, title2, content2, 
+      title3, content3, uptitle, 
+      upcontent)
+    values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{wordtitle,jdbcType=VARCHAR}, 
+      #{wordcontent,jdbcType=VARCHAR}, #{count,jdbcType=INTEGER}, #{checkflag,jdbcType=INTEGER}, 
+      #{typeid,jdbcType=INTEGER}, #{delFlag,jdbcType=TINYINT}, #{title1,jdbcType=VARCHAR}, 
+      #{content1,jdbcType=VARCHAR}, #{title2,jdbcType=VARCHAR}, #{content2,jdbcType=VARCHAR}, 
+      #{title3,jdbcType=VARCHAR}, #{content3,jdbcType=VARCHAR}, #{uptitle,jdbcType=VARCHAR}, 
+      #{upcontent,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.ishang.doki.entity.Hotword">
+    update hotword
+    set wordtitle = #{wordtitle,jdbcType=VARCHAR},
+      wordcontent = #{wordcontent,jdbcType=VARCHAR},
+      `count` = #{count,jdbcType=INTEGER},
+      checkflag = #{checkflag,jdbcType=INTEGER},
+      typeid = #{typeid,jdbcType=INTEGER},
+      del_flag = #{delFlag,jdbcType=TINYINT},
+      title1 = #{title1,jdbcType=VARCHAR},
+      content1 = #{content1,jdbcType=VARCHAR},
+      title2 = #{title2,jdbcType=VARCHAR},
+      content2 = #{content2,jdbcType=VARCHAR},
+      title3 = #{title3,jdbcType=VARCHAR},
+      content3 = #{content3,jdbcType=VARCHAR},
+      uptitle = #{uptitle,jdbcType=VARCHAR},
+      upcontent = #{upcontent,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+      and userid = #{userid,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    select id, userid, wordtitle, wordcontent, `count`, checkflag, typeid, del_flag, 
+    title1, content1, title2, content2, title3, content3, uptitle, upcontent
+    from hotword
+    where id = #{id,jdbcType=INTEGER}
+      and userid = #{userid,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select hotword.id, typename,user.username,userid, wordtitle, wordcontent, `count`, hotword.checkflag, hotword.typeid, hotword.del_flag, 
+    title1, content1, title2, content2, title3, content3, uptitle, upcontent
+    from hotword,hotwordtype,user
+    where user.id=hotword.userid and hotwordtype.typeid=hotword.typeid
+  </select>
+  <!-- added by ljt -->
+  <!--  -->
+  <update id="updateone" parameterType="java.lang.String">
+ UPDATE hotword
+set count=count+1
+where wordtitle=#{wordtitle}
+ </update>
+ <!-- 输出所有通过的hotword词条 -->
+  <select id="selectAllorder" resultMap="BaseResultMap">
+select *
+from hotword
+where checkflag=1
+ORDER BY count desc
+
+
+  
+  </select>
+  <!-- 更新词条 -->
+<update id="updateword" parameterType="com.ishang.doki.entity.Hotword">
+ update hotword
+set upcontent=#{upcontent}
+where userid=1
+and wordtitle=#{wordtitle}
+</update>
+<!-- 模糊查找 -->
+<select id="selectbytitle" resultMap="BaseResultMap">
+select typename,user.username,hotword.id, userid, wordtitle, wordcontent, `count`, upcontent, checkflag, hotword.typeid, 
+hotword.del_flag,hotword.checkflag,title1,content1,title2,content2,title3,content3
+from hotword,user,hotwordtype
+where user.id=hotword.userid
+and hotword.typeid=hotwordtype.typeid
+and wordtitle like concat('%',#{wordtitle},'%')
+ 
+
+</select>
+<!-- 词条详细信息 -->
+<select id="selectbyid" resultMap="BaseResultMap">
+select *
+from hotword
+where id=#{id}
+
+</select>
+<!-- 后台审核成功 -->
+<update id="success" parameterType="com.ishang.doki.entity.Hotword">
+update hotword
+set checkflag=1
+where id=#{id}
+</update>
+<update id="fail" parameterType="com.ishang.doki.entity.Hotword">
+update hotword
+set checkflag=0
+where id=#{id}
+</update>
+<!-- 修改简介内容 -->
+<update id="upsuccess1" parameterType="com.ishang.doki.entity.Hotword">
+update hotword
+set checkflag=1,
+wordcontent=#{upcontent}
+where id=#{id}
+
+</update>
+<!-- 修改title1内容 -->
+<update id="upsuccess2" parameterType="com.ishang.doki.entity.Hotword">
+update hotword
+set checkflag=1,
+content1=#{upcontent},
+title1=#{uptitle}
+where id=#{id}
+  
+</update>
+<!-- 修改title2内容 -->
+<update id="upsuccess3" parameterType="com.ishang.doki.entity.Hotword">
+update hotword
+set checkflag=1,
+content2=#{upcontent},
+title2=#{uptitle}
+where id=#{id}
+  
+</update>
+<!-- 修改title3内容 -->
+<update id="upsuccess4" parameterType="com.ishang.doki.entity.Hotword">
+update hotword
+set checkflag=1,
+content3=#{upcontent},
+title3=#{uptitle}
+where id=#{id}  
+</update>
+<select id="selectcheck" resultMap="BaseResultMap">
+select typename,user.username,hotword.id, userid, wordtitle, wordcontent, `count`, checkflag, hotword.typeid, 
+    hotword.del_flag,hotword.checkflag,title1,content1,title2,content2,title3,content3,uptitle,upcontent
+    from hotword,user,hotwordtype
+    where user.id=hotword.userid
+    and hotword.typeid=hotwordtype.typeid
+    and checkflag=0 and hotword.del_flag=1
+</select>
+<update id="worddel" parameterType="com.ishang.doki.entity.Hotword">
+update hotword
+set del_flag=0
+where id=#{id}
+</update>
+<update id="wordres" parameterType="com.ishang.doki.entity.Hotword">
+update hotword
+set del_flag=1
+where id=#{id}
+</update>
+
+<select id="wordcount" resultMap="BaseResultMap">
+select count(*) as wordcount
+from hotword
+
+
+</select>
+
+<select id="wordlist" resultMap="BaseResultMap">
+select *
+from hotword
+where del_flag=1 and checkflag=1
+
+</select>
+<select id="detaillist" resultMap="BaseResultMap">
+select *
+from hotword
+where id=#{id}
+and del_flag=1
+and checkflag=1
+</select>
+<update id="updatehotword" parameterType="com.ishang.doki.entity.Hotword">
+update hotword
+set uptitle=#{uptitle},
+	upcontent=#{upcontent},
+	checkflag=#{checkflag}
+where id=#{id}
+
+</update>
+<select id="selecttitlebyid" resultMap="BaseResultMap">
+select title1,title2,title3
+from hotword
+where id=#{id}
+
+</select>
+<update id="wordcountplus" parameterType="com.ishang.doki.entity.Hotword">
+update hotword
+set count=count+1
+where id=#{id}
+</update>
+
+</mapper>

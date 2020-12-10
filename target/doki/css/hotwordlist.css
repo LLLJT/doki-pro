@@ -1,0 +1,572 @@
+html{
+    width:94.9375rem;
+	height:93.75rem;
+	margin:auto;
+}
+body{
+	background:url(../images/background.jpg) no-repeat;/* 鑳屾櫙鍥剧墖  */
+	background-size:1519px 1500px;
+	margin: auto;
+	padding:auto;
+}
+.top{
+	position: fixed;
+	top: 0px;
+	width: 94.9375rem;
+	height: 3.75rem;
+	color: black;
+	background-color:rgba(21,41,80,0.8);
+	z-index:1;
+}
+.topnb ul{
+	position: fixed;
+    width: 94.9375rem;
+	height: 3.75rem;
+    list-style-type: none;
+    black-space:nowrap;
+    overflow: hidden;
+    margin-left: 0;
+	margin-top:0;
+    padding: 0;
+}
+.topnb ul img{
+	position: relative;
+	margin-left: 5%;
+	margin-right: 5%;
+	width: 4.0625rem;
+	height: 100%;
+	float:left;
+}
+.topnb li {
+	position: relative;
+	margin-top: 1.125rem;
+	font-size:1.125rem;
+    float:left; /* 使li内容横向浮动，即横向排列  */
+    margin-right:5%;   /* 两个li之间的距离*/
+    overflow: hidden;
+}
+.topnb li a{
+	/* 设置链接内容显示的格式*/
+    display: block; /*链接显示为块元素可使整个链接区域可点击 */
+    color:black;
+    text-align: center;
+    padding: 0.1875rem;
+    overflow: hidden;
+    text-decoration: none;/* 去除下划线 */
+}
+.topnb li a:hover{
+    /* 鼠标选中时w文字变绿 */
+    color: rgba(1,248,90);
+}
+.search{
+	float:left;
+	height: 1.5625rem;
+	margin-left:20%;
+	margin-top:1.125rem;
+	border-radius:1.25rem 1.25rem 1.25rem 1.25rem;
+	background-color:black;
+	border:none;
+	outline:medium;
+}
+.topnb span {
+	position: relative;
+	margin-top: 1.125rem;
+	font-size:1.125rem;
+    float:right; 
+    margin-right:5%; 
+    overflow: hidden;
+}
+.topnb span a{
+	/* 设置链接内容显示的格式*/
+    display: block; /*链接显示为块元素可使整个链接区域可点击 */
+    color:black;
+    text-align: center;
+    padding: 0.1875rem;
+    overflow: hidden;
+    text-decoration: none;/* 去除下划线 */
+}
+.topnb span a:hover{
+    /* 鼠标选中时w文字变绿 */
+    color: rgba(1,248,90);
+}
+.block {
+	position:absolute ;
+	margin-top:3.75rem;
+	margin-left:16.25rem ;
+	width:120rem ;
+	height:115rem ;
+	color:black ;
+	background-color: rgba(255,255,255,0.9);
+}
+.vtuberlist{
+	position: absolute;
+	width: 62.5rem;
+	height: 6rem;
+	margin-top: 0.5rem;
+	margin-left: 2rem;
+	font-size: 3rem;
+	line-height: 6rem;
+	color: black;
+}
+.name1{
+	position: absolute;
+	margin-top: 7rem;
+	margin-left: 5rem;
+	font-size: 1.5rem;
+	line-height: 6rem;
+	color: black;
+}
+.name1 a{
+	/* 设置链接内容显示的格式*/
+    display: block; /*链接显示为块元素可使整个链接区域可点击 */
+    text-align: center;
+    padding: 0.1875rem;
+    overflow: hidden;
+    text-decoration: none;/* 去除下划线 */
+}
+.number1{
+	position: absolute;
+	margin-top: 7rem;
+	margin-left:45rem;
+	font-size: 1.2rem;
+	line-height: 6rem;
+	color: grey;
+}
+.first1 span{
+	position: absolute;
+	margin-top: 7rem;
+	margin-left:48rem;
+	font-size: 1.2rem;
+	line-height: 6rem;
+	color: red;
+}
+.first1 p{
+	position: absolute;
+	margin-top: 14rem;
+	margin-left: 7rem;
+	line-height: 1.25rem;
+	width: 40rem;
+	color: #000000;
+}
+.name2{
+	position: absolute;
+	margin-top: 18rem;
+	margin-left: 5rem;
+	font-size: 1.5rem;
+	line-height: 6rem;
+	color: black;
+}
+.name2 a{
+	/* 设置链接内容显示的格式*/
+    display: block; /*链接显示为块元素可使整个链接区域可点击 */
+    text-align: center;
+    padding: 0.1875rem;
+    overflow: hidden;
+    text-decoration: none;/* 去除下划线 */
+}
+.number2{
+	position: absolute;
+	margin-top: 18rem;
+	margin-left:45rem;
+	font-size: 1.2rem;
+	line-height: 6rem;
+	color: grey;
+}
+.first2 span{
+	position: absolute;
+	margin-top: 18rem;
+	margin-left:48rem;
+	font-size: 1.2rem;
+	line-height: 6rem;
+	color: red;
+}
+.first2 p{
+	position: absolute;
+	margin-top: 25rem;
+	margin-left: 7rem;
+	line-height: 1.25rem;
+	width: 40rem;
+	color: #000000;
+}
+.name3{
+	position: absolute;
+	margin-top: 29rem;
+	margin-left: 5rem;
+	font-size: 1.5rem;
+	line-height: 6rem;
+	color: black;
+}
+.name3 a{
+	/* 设置链接内容显示的格式*/
+    display: block; /*链接显示为块元素可使整个链接区域可点击 */
+    text-align: center;
+    padding: 0.1875rem;
+    overflow: hidden;
+    text-decoration: none;/* 去除下划线 */
+}
+.number3{
+	position: absolute;
+	margin-top: 29rem;
+	margin-left:45rem;
+	font-size: 1.2rem;
+	line-height: 6rem;
+	color: grey;
+}
+.first3 span{
+	position: absolute;
+	margin-top: 29rem;
+	margin-left:48rem;
+	font-size: 1.2rem;
+	line-height: 6rem;
+	color:#67C23A ;
+}
+.first3 p{
+	position: absolute;
+	margin-top: 36rem;
+	margin-left: 7rem;
+	line-height: 1.25rem;
+	width: 40rem;
+	color: #000000;
+}
+.name4{
+	position: absolute;
+	margin-top: 40rem;
+	margin-left: 5rem;
+	font-size: 1.5rem;
+	line-height: 6rem;
+	color: black;
+}
+.name4 a{
+	/* 设置链接内容显示的格式*/
+    display: block; /*链接显示为块元素可使整个链接区域可点击 */
+    text-align: center;
+    padding: 0.1875rem;
+    overflow: hidden;
+    text-decoration: none;/* 去除下划线 */
+}
+.number4{
+	position: absolute;
+	margin-top: 40rem;
+	margin-left:45rem;
+	font-size: 1.2rem;
+	line-height: 6rem;
+	color: grey;
+}
+.first4 span{
+	position: absolute;
+	margin-top: 40rem;
+	margin-left:48rem;
+	font-size: 1.2rem;
+	line-height: 6rem;
+	color: #539c2e;
+}
+.first4 p{
+	position: absolute;
+	margin-top: 47rem;
+	margin-left: 7rem;
+	line-height: 1.25rem;
+	width: 40rem;
+	color: #000000;
+}
+.name5{
+	position: absolute;
+	margin-top: 45rem;
+	margin-left: 5rem;
+	font-size: 1.5rem;
+	line-height: 6rem;
+	color: black;
+}
+.name5 a{
+	/* 设置链接内容显示的格式*/
+    display: block; /*链接显示为块元素可使整个链接区域可点击 */
+    text-align: center;
+    padding: 0.1875rem;
+    overflow: hidden;
+    text-decoration: none;/* 去除下划线 */
+}
+.number5{
+	position: absolute;
+	margin-top: 45rem;
+	margin-left:45rem;
+	font-size: 1.2rem;
+	line-height: 6rem;
+	color: grey;
+}
+.first5 span{
+	position: absolute;
+	margin-top: 45rem;
+	margin-left:48rem;
+	font-size: 1.2rem;
+	line-height: 6rem;
+	color: red;
+}
+.first5 p{
+	position: absolute;
+	margin-top: 58rem;
+	margin-left: 7rem;
+	line-height: 1.25rem;
+	width: 40rem;
+	color: #000000;
+}
+.name6{
+	position: absolute;
+	margin-top: 50rem;
+	margin-left: 5rem;
+	font-size: 1.5rem;
+	line-height: 6rem;
+	color: black;
+}
+.name6 a{
+	/* 设置链接内容显示的格式*/
+    display: block; /*链接显示为块元素可使整个链接区域可点击 */
+    text-align: center;
+    padding: 0.1875rem;
+    overflow: hidden;
+    text-decoration: none;/* 去除下划线 */
+}
+.number6{
+	position: absolute;
+	margin-top: 50rem;
+	margin-left:45rem;
+	font-size: 1.2rem;
+	line-height: 6rem;
+	color: grey;
+}
+.first6 span{
+	position: absolute;
+	margin-top: 50rem;
+	margin-left:48rem;
+	font-size: 1.2rem;
+	line-height: 6rem;
+	color: #539c2e;
+}
+.first6 p{
+	position: absolute;
+	margin-top: 69rem;
+	margin-left: 7rem;
+	line-height: 1.25rem;
+	width: 40rem;
+	color: #000000;
+}
+.name7{
+	position: absolute;
+	margin-top: 55rem;
+	margin-left: 5rem;
+	font-size: 1.5rem;
+	line-height: 6rem;
+	color: black;
+}
+.name7 a{
+	/* 设置链接内容显示的格式*/
+    display: block; /*链接显示为块元素可使整个链接区域可点击 */
+    text-align: center;
+    padding: 0.1875rem;
+    overflow: hidden;
+    text-decoration: none;/* 去除下划线 */
+}
+.number7{
+	position: absolute;
+	margin-top: 55rem;
+	margin-left:45rem;
+	font-size: 1.2rem;
+	line-height: 6rem;
+	color: grey;
+}
+.first7 span{
+	position: absolute;
+	margin-top: 55rem;
+	margin-left:48rem;
+	font-size: 1.2rem;
+	line-height: 6rem;
+	color: red;
+}
+.first7 p{
+	position: absolute;
+	margin-top: 80rem;
+	margin-left: 7rem;
+	line-height: 1.25rem;
+	width: 40rem;
+	color: #000000;
+}
+.name8{
+	position: absolute;
+	margin-top: 60rem;
+	margin-left: 5rem;
+	font-size: 1.5rem;
+	line-height: 6rem;
+	color: black;
+}
+.name8 a{
+	/* 设置链接内容显示的格式*/
+    display: block; /*链接显示为块元素可使整个链接区域可点击 */
+    text-align: center;
+    padding: 0.1875rem;
+    overflow: hidden;
+    text-decoration: none;/* 去除下划线 */
+}
+.number8{
+	position: absolute;
+	margin-top: 60rem;
+	margin-left:45rem;
+	font-size: 1.2rem;
+	line-height: 6rem;
+	color: grey;
+}
+.first8 span{
+	position: absolute;
+	margin-top: 60rem;
+	margin-left:48rem;
+	font-size: 1.2rem;
+	line-height: 6rem;
+	color: #539c2e;
+}
+.first8 p{
+	position: absolute;
+	margin-top: 91rem;
+	margin-left: 7rem;
+	line-height: 1.25rem;
+	width: 40rem;
+	color: #000000;
+}
+.name9{
+	position: absolute;
+	margin-top: 65rem;
+	margin-left: 5rem;
+	font-size: 1.5rem;
+	line-height: 6rem;
+	color: black;
+}
+.name9 a{
+	/* 设置链接内容显示的格式*/
+    display: block; /*链接显示为块元素可使整个链接区域可点击 */
+    text-align: center;
+    padding: 0.1875rem;
+    overflow: hidden;
+    text-decoration: none;/* 去除下划线 */
+}
+.number9{
+	position: absolute;
+	margin-top: 65rem;
+	margin-left:45rem;
+	font-size: 1.2rem;
+	line-height: 6rem;
+	color: grey;
+}
+.first9 span{
+	position: absolute;
+	margin-top: 65rem;
+	margin-left:48rem;
+	font-size: 1.2rem;
+	line-height: 6rem;
+	color: #539c2e;
+}
+.first9 p{
+	position: absolute;
+	margin-top: 36rem;
+	margin-left: 7rem;
+	line-height: 1.25rem;
+	width: 40rem;
+	color: #000000;
+}
+.name10{
+	position: absolute;
+	margin-top: 70rem;
+	margin-left: 5rem;
+	font-size: 1.5rem;
+	line-height: 6rem;
+	color: black;
+}
+.name10 a{
+	/* 设置链接内容显示的格式*/
+    display: block; /*链接显示为块元素可使整个链接区域可点击 */
+    text-align: center;
+    padding: 0.1875rem;
+    overflow: hidden;
+    text-decoration: none;/* 去除下划线 */
+}
+.number10{
+	position: absolute;
+	margin-top: 70rem;
+	margin-left:45rem;
+	font-size: 1.2rem;
+	line-height: 6rem;
+	color: grey;
+}
+.first10 span{
+	position: absolute;
+	margin-top:70rem;
+	margin-left:48rem;
+	font-size: 1.2rem;
+	line-height: 6rem;
+	color: #539c2e;
+}
+.first10 p{
+	position: absolute;
+	margin-top: 102rem;
+	margin-left: 7rem;
+	line-height: 1.25rem;
+	width: 40rem;
+	color: #000000;
+}
+.down{
+	position: absolute;
+	top: 1380px;
+	width: 1519px;
+	height: 120px;
+	color: white;
+	background-color:rgba(21,41,80,0.8);
+}
+.down1{
+	position:absolute;
+	width: 180px;
+	margin-top: 20px;
+	margin-left: 240px;
+	color: white;
+	text-align:center;
+	font-size: 40px;
+}
+.down2{
+	position:absolute;
+	width: 180px;
+	margin-top: 70px;
+	margin-left: 240px;
+	color: white;
+	text-align:center;
+	font-size: 20px;
+}
+.down3{
+	position:absolute;
+	width: 180px;
+	margin-top: 30px;
+	margin-left: 1040px;
+	color: white;
+	text-align:center;
+	font-size: 18px;
+}
+.down4{
+	position:absolute;
+	width: 180px;
+	margin-top: 30px;
+	margin-left: 1140px;
+	color: white;
+	text-align:center;
+	font-size: 18px;
+}
+.down5{
+	position:absolute;
+	width: 180px;
+	margin-top: 65px;
+	margin-left: 1040px;
+	color: white;
+	text-align:center;
+	font-size: 18px;
+}
+.down6{
+	position:absolute;
+	width: 180px;
+	margin-top: 65px;
+	margin-left: 1140px;
+	color: white;
+	text-align:center;
+	font-size: 18px;
+}
